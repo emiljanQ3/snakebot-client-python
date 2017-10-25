@@ -3,6 +3,7 @@ class Snake:
         self.positions = [position]
         self.direction = direction
         self.isAlive = True
+        self.score = 1
 
     def set_direction(self, direction):
         # TODO this might not be nessesary as it might be allowed on the server
@@ -23,6 +24,7 @@ class Snake:
         return True
 
     def grow(self):
+        self.score += 1
         self.positions.append(self.positions[-1])
 
     def move(self):
