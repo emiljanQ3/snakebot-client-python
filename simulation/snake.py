@@ -22,9 +22,12 @@ class Snake:
             return False
         return True
 
+    def grow(self):
+        self.positions.append(self.positions[-1])
+
     def move(self):
         # Move all body parts
-        for x in range(len(self.positions), 1):
+        for x in reversed(range(1, len(self.positions))):
             self.positions[x] = self.positions[x-1]
         # Move head
         delta_change = (0, 0)
