@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="66eacf68-f529-4d9c-9a20-66b5c65eddba" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simulation/gui.py" afterPath="$PROJECT_DIR$/simulation/gui.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simulation/world.py" afterPath="$PROJECT_DIR$/simulation/world.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +30,8 @@
       <file leaf-file-name="world.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/simulation/world.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+            <state relative-caret-position="336">
+              <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -289,12 +288,12 @@
       <option name="presentableId" value="Default" />
       <updated>1508941801273</updated>
       <workItem from="1508941808091" duration="4062000" />
-      <workItem from="1508968781155" duration="2898000" />
+      <workItem from="1508968781155" duration="3398000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6960000" />
+    <option name="totallyTimeSpent" value="7460000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
@@ -399,8 +398,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/simulation/world.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+        <state relative-caret-position="336">
+          <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

@@ -7,7 +7,7 @@ class World:
         self.size = size
         self.snake_count = snake_count
         self.snakes = []
-        self.tick = 0;
+        self.tick = 0
 
         for x in range(0, snake_count):
             self.snakes.append(Snake((0, x*2), "right"))
@@ -18,8 +18,9 @@ class World:
                 snake.grow()
             snake.move()
 
-            # Check if snake is outside bound
-            if 0 < snake.positions[0][0] < self.size[0] or 0 < snake.positions[0][1] < self.size[1]:
-                print "dead yo"
+            # Kill snake if outside map
+            if (snake.positions[0][0] < 0 or snake.positions[0][0] > self.size[0]) or \
+                    (snake.positions[0][1] < 0 or snake.positions[0][1] > self.size[1]):
+                self.snakes.remove(snake)
 
         self.tick += 1
