@@ -27,11 +27,13 @@ class Snake:
         for x in range(len(self.positions), 1):
             self.positions[x] = self.positions[x-1]
         # Move head
+        delta_change = (0, 0)
         if self.direction == "up":
-            self.positions[0] = self.positions[0] + (0, 1)
+            delta_change = (0, 1)
         if self.direction == "right":
-            self.positions[0] = self.positions[0] + (1, 0)
+            delta_change = (1, 0)
         if self.direction == "down":
-            self.positions[0] = self.positions[0] + (0, -1)
+            delta_change = (0, -1)
         if self.direction == "left":
-            self.positions[0] = self.positions[0] + (-1, 0)
+            delta_change = (-1, 0)
+        self.positions[0] = tuple(sum(x) for x in zip(self.positions[0], delta_change))
