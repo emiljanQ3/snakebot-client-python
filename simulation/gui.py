@@ -4,7 +4,7 @@ pygame.init()
 
 size = width, height = 320, 320
 black = 0, 0, 0
-world = World((10, 10), 3, 4)
+world = World((10, 10), 3, 4, score_per_kill=5)
 screen = pygame.display.set_mode(size)
 
 while 1:

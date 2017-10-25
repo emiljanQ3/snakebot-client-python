@@ -3,11 +3,12 @@ from random import randint
 
 
 class World:
-    def __init__ (self, size, snake_count, no_snake_radius):
+    def __init__ (self, size, snake_count, no_snake_radius, score_per_kill):
         self.size = size
         self.snake_count = snake_count
         self.snakes = []
         self.tick = 0
+        self.score_per_kill = score_per_kill
 
         for x in range(0, snake_count):
             self.snakes.append(Snake((0, x*2), "right"))
@@ -33,6 +34,8 @@ class World:
                     iter_snake = next(iter_snake)
                 for other_snake_parts in iter_snake:
                     if other_snake_parts == snake.positions[0]:
+                        if not other_snake is snake:
+                            other_snake.add_score(self.score_per_kill)
                         snake.kill()
         # Remove dead snakes
         for snake in self.snakes[:]:

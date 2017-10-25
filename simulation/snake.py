@@ -28,6 +28,9 @@ class Snake:
         self.positions.append(self.positions[-1])
         print(self.positions)
 
+    def add_score(self, score):
+        self.score += score
+
     def kill(self):
         self.isAlive = False
 
