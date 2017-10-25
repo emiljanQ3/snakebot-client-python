@@ -16,7 +16,7 @@ while 1:
         for position in snake.positions:
             pygame.draw.rect(screen, (100,100,100), (position[0]*(width/world.size[0]), position[1]*(height/world.size[1]) ,width/world.size[0], height/world.size[1]))
 
-    world.tick()
+    world.update()
 
     pygame.display.flip()
     pygame.time.wait(500)
