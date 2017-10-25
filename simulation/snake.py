@@ -26,6 +26,10 @@ class Snake:
     def grow(self):
         self.score += 1
         self.positions.append(self.positions[-1])
+        print(self.positions)
+
+    def kill(self):
+        self.isAlive = False
 
     def move(self):
         # Move all body parts

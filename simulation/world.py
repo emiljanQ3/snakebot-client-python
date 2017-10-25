@@ -11,6 +11,7 @@ class World:
 
         for x in range(0, snake_count):
             self.snakes.append(Snake((0, x*2), "right"))
+        self.snakes.append(Snake((5, 6), "down"))
 
     def update(self):
         for snake in self.snakes:
@@ -21,6 +22,20 @@ class World:
             # Kill snake if outside map
             if (snake.positions[0][0] < 0 or snake.positions[0][0] > self.size[0]) or \
                     (snake.positions[0][1] < 0 or snake.positions[0][1] > self.size[1]):
-                self.snakes.remove(snake)
+                snake.kill()
 
+            # Check for collisions with other snakes
+            # TODO this might be wrong if both goes into eachothers heads.
+            for other_snake in self.snakes:
+                # Create iterator for iterating all snake parts. If other_snake is same as snake, skip head
+                iter_snake = iter(other_snake.positions)
+                if other_snake is snake:
+                    iter_snake = next(iter_snake)
+                for other_snake_parts in iter_snake:
+                    if other_snake_parts == snake.positions[0]:
+                        snake.kill()
+        # Remove dead snakes
+        for snake in self.snakes[:]:
+            if not snake.isAlive:
+                self.snakes.remove(snake)
         self.tick += 1
