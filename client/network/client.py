@@ -1,16 +1,16 @@
-import argparse
-import json
 import logging
 import sys
 
+import argparse
+import asyncio
 import colorlog
+import json
 from autobahn.asyncio.websocket import (WebSocketClientFactory,
                                         WebSocketClientProtocol)
 
-import asyncio
 import messages
 import snake
-import util
+from client import util
 
 log = logging.getLogger("client")
 log_levels = {

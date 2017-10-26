@@ -1,6 +1,5 @@
 from snake import Snake
-from random import randint
-from util import Map
+import util
 
 
 class World:
@@ -45,19 +44,21 @@ class World:
         self.tick += 1
 
     def get_map(self):
-        game_map = []
+        game_map = {}
         game_map["width"] = self.size[0]
         game_map["height"] = self.size[1]
         game_map["worldTick"] = self.tick
         snake_infos = []
         for snake in self.snakes:
-            snake_info = []
+            snake_info = {}
             snake_info["points"] = snake.score
             snake_positions = []
             for position in snake.positions:
                 # Todo this depends on how num is calculated in the real game
-                snake_positions.append(snake_positions[1]*self.size[0] + snake_positions[0])
+                snake_positions.append(position[1]*self.size[0] + position[0])
             snake_info["positions"] = snake_positions
+            snake_infos.append(snake_info)
 
         game_map["snakeInfos"] = snake_infos
-        return Map(game_map)
+        print(game_map)
+        return util.Map(game_map)

@@ -1,5 +1,6 @@
 import logging
-import util
+
+from client import util
 
 log = logging.getLogger("client.snake")
 

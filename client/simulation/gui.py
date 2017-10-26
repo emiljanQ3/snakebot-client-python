@@ -4,7 +4,7 @@ pygame.init()
 
 size = width, height = 320, 320
 black = 0, 0, 0
-world = World((20, 20), 3, 4, score_per_kill=5)
+world = World((10, 10), 3, 4, score_per_kill=5)
 screen = pygame.display.set_mode(size)
 
 while 1:
@@ -15,7 +15,7 @@ while 1:
     for snake in world.snakes:
         for position in snake.positions:
             pygame.draw.rect(screen, (100,100,100), (position[0]*(width/world.size[0]), position[1]*(height/world.size[1]) ,width/world.size[0], height/world.size[1]))
-
+    world.get_map()
     world.update()
 
     pygame.display.flip()
