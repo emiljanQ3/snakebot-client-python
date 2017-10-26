@@ -1,4 +1,6 @@
 from snake import Snake
+from random import randint
+from util import Map
 
 
 class World:
