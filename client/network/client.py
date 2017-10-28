@@ -10,7 +10,7 @@ from autobahn.asyncio.websocket import (WebSocketClientFactory,
 
 import messages
 import snake
-from client import util
+import util
 
 log = logging.getLogger("client")
 log_levels = {
@@ -94,6 +94,7 @@ class SnakebotProtocol(WebSocketClientProtocol):
         self.sendClose()
 
     def _map_update(self, msg):
+        print (msg['map'])
         direction = self.snake.get_next_move(util.Map(msg['map']))
         self._send(messages.register_move(str(direction), msg))
 
