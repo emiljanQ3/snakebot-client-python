@@ -22,7 +22,7 @@ class World:
 
         # Spawn obstacles
         for x in range(0, self.obstacle_count):
-            self.obstacles.append(Obstacle((2*x, 5)))
+            self.obstacles.append(Obstacle((8, x)))
 
     def update(self):
         for snake in self.snakes:
@@ -47,6 +47,10 @@ class World:
                         if not other_snake is snake:
                             other_snake.add_score(self.score_per_kill)
                         snake.kill()
+            # Check for collisions with obstacles
+            for obstacle in self.obstacles:
+                if obstacle.position == snake.positions[0]:
+                    snake.kill()
         # Remove dead snakes
         for snake in self.snakes[:]:
             if not snake.isAlive:
